@@ -1,0 +1,10 @@
+'*.{ts,tsx}':
+  - organize-imports-cli
+  - pnpm format:base --fix
+  - pnpm lint:base --fix
+'*.{md,css,scss}':
+  - pnpm format:base --fix
+'src/**/*.{js,jsx}':
+  - organize-imports-cli
+  - pnpm format:base --fix
+  - pnpm lint:base --fix
