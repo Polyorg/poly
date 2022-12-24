@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Poly React web app",
   "main": "index.tsx",
+  "engines": {
+    "node": "18.12.0",
+    "pnpm": "7.11.0"
+  },
   "scripts": {
     "clean": "rimraf dist/*",
     "dev": "npm run prebuild && wp --env dev",
@@ -19,7 +23,8 @@
     "test:nocoverage": "jest --coverage=false",
     "test:debug": "node --inspect node_modules/.bin/jest --runInBand --coverage=false",
     "test-watch": "jest --config jest.config.js --watch --coverage=false",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "prepare": "husky install"
   },
   "keywords": [
     "react",
@@ -37,6 +42,8 @@
     "change-case": "^4.1.2",
     "chroma-js": "^2.4.2",
     "ejs": "^3.1.8",
+    "express": "~4.18.2",
+    "helmet": "~6.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -44,8 +51,6 @@
     "react-router-dom": "^6.4.1",
     "statsig-react": "^1.17.0",
     "styled-components": "^5.3.6",
-    "express": "~4.18.2",
-    "helmet": "~6.0.1",
     "winston": "~3.8.2"
   },
   "devDependencies": {
@@ -70,14 +75,19 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
+    "@testing-library/react": "~13.4.0",
+    "@types/jest": "28.1.8",
+    "@types/node": "18.11.15",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "autoprefixer": "~10.4.13",
     "babel-loader": "^8.2.5",
     "babel-plugin-module-resolver": "^4.1.0",
     "chalk": "^5.0.1",
     "codecov": "^3.8.3",
+    "copyfiles": "~2.4.1",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
@@ -92,15 +102,18 @@
     "eslint-webpack-plugin": "^3.2.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.2",
     "jest": "28.1.3",
     "lint-staged": "^13.0.3",
     "mini-css-extract-plugin": "^2.6.1",
     "organize-imports-cli": "^0.10.0",
+    "postcss": "~8.4.20",
     "postcss-loader": "^7.0.1",
     "prettier": "^2.3.2",
     "react-dev-utils": "^12.0.1",
     "rimraf": "^3.0.2",
     "style-loader": "^3.3.1",
+    "tailwindcss": "~3.2.4",
     "terser-webpack-plugin": "^5.3.5",
     "ts-jest": "28.0.8",
     "typescript": "4.9.4",
@@ -111,14 +124,7 @@
     "webpack-dev-server": "^4.10.0",
     "webpack-merge": "^5.8.0",
     "webpack-nano": "^1.1.1",
-    "webpack-plugin-serve": "^1.6.0",
-    "@types/node": "18.11.15",
-    "@types/jest": "28.1.8",
-    "@testing-library/react": "~13.4.0",
-    "tailwindcss": "~3.2.4",
-    "postcss": "~8.4.20",
-    "autoprefixer": "~10.4.13",
-    "copyfiles": "~2.4.1"
+    "webpack-plugin-serve": "^1.6.0"
   },
   "browserslist": {
     "production": [
